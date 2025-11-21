@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Professional security guard and mobile patrol services serving Ottawa and surrounding areas. 24/7 coverage with licensed guards.">
+  <title>Iron Watch Security - Professional Security Guard & Mobile Patrol Services</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- EmailJS for contact form - Get your Public Key from https://www.emailjs.com/ -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+<body>
+  <!-- Header -->
+  <header id="header" class="header">
+    <nav class="nav-container">
+      <div class="nav-content">
+        <!-- Logo -->
+        <a href="#hero" class="logo-link" onclick="scrollToSection(event, '#hero')">
+          <img src="images/mainlogo.png" 
+               alt="Iron Watch Security Logo" 
+               class="logo-image"
+               onload="console.log('Logo loaded successfully');"
+               onerror="console.error('Logo failed to load from:', this.src); this.style.border='2px solid red'; this.alt='Logo failed to load';"
+               style="display: block; max-width: 200px; height: auto; min-height: 40px;">
+          <!-- Logo text will be hidden on smaller screens when logo image is large -->
+          <span class="logo-text">
+            IRON WATCH
+            <span class="logo-text-small">SECURITY</span>
+          </span>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <div class="nav-links-desktop">
+          <a href="#about" onclick="scrollToSection(event, '#about')">About</a>
+          <a href="#services" onclick="scrollToSection(event, '#services')">Services</a>
+          <a href="#industries" onclick="scrollToSection(event, '#industries')">Industries</a>
+          <a href="#process" onclick="scrollToSection(event, '#process')">Process</a>
+          <a href="#testimonials" onclick="scrollToSection(event, '#testimonials')">Testimonials</a>
+          <a href="#contact" onclick="scrollToSection(event, '#contact')">Contact</a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button class="mobile-menu-btn" aria-label="Menu" onclick="toggleMobileMenu()">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile Navigation -->
+      <div class="nav-links-mobile" id="mobileMenu">
+        <a href="#about" onclick="scrollToSection(event, '#about'); toggleMobileMenu();">About</a>
+        <a href="#services" onclick="scrollToSection(event, '#services'); toggleMobileMenu();">Services</a>
+        <a href="#industries" onclick="scrollToSection(event, '#industries'); toggleMobileMenu();">Industries</a>
+        <a href="#process" onclick="scrollToSection(event, '#process'); toggleMobileMenu();">Process</a>
+        <a href="#testimonials" onclick="scrollToSection(event, '#testimonials'); toggleMobileMenu();">Testimonials</a>
+        <a href="#contact" onclick="scrollToSection(event, '#contact'); toggleMobileMenu();">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+      <div class="hero-bg"></div>
+      <div class="hero-decorative">
+        <div class="hero-blob hero-blob-1"></div>
+        <div class="hero-blob hero-blob-2"></div>
+      </div>
+      
+      <div class="section-container hero-content">
+        <div class="fade-in-up">
+          <!-- Logo -->
+          <div class="hero-logo fade-in-up-delay">
+            <img src="images/mainlogo.png" 
+                 alt="Iron Watch Security - Professional Security Services" 
+                 class="hero-logo-image"
+                 onload="console.log('Hero logo loaded successfully');"
+                 onerror="console.error('Hero logo failed to load from:', this.src); this.style.border='2px solid red'; this.alt='Logo failed to load';"
+                 style="display: block; max-width: 100%; height: auto; min-height: 150px;">
+          </div>
+
+          <!-- Main Headline -->
+          <h1 class="hero-title fade-in-up-delay-2">
+            Professional Security Guard &<br>
+            <span class="text-gold">Mobile Patrol Services</span>
+          </h1>
+
+          <!-- Sub-text -->
+          <p class="hero-subtitle fade-in-up-delay-3">
+            Serving Ottawa and surrounding areas
+          </p>
+
+          <!-- CTA Buttons -->
+          <div class="hero-buttons fade-in-up-delay-4">
+            <button class="btn-primary" onclick="scrollToSection(event, '#contact')">Request a Quote</button>
+            <a href="tel:+10000000000" class="btn-secondary">Call Now</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section bg-charcoal-light">
+      <div class="section-container">
+        <div class="fade-in-section">
+          <h2 class="section-title text-center">About Iron Watch Security</h2>
+          
+          <div class="about-content">
+            <p class="about-text">
+              Iron Watch Security is a premier private security company dedicated to providing 
+              professional, reliable, and trusted security services. We specialize in protecting 
+              your business, property, and peace of mind with our experienced team of licensed 
+              security professionals.
+            </p>
+            
+            <p class="about-text-secondary">
+              Our commitment to excellence and attention to detail sets us apart in the security 
+              industry. We understand that every client has unique needs, and we work closely 
+              with you to develop customized security solutions that fit your specific requirements.
+            </p>
+
+            <!-- Strengths Grid -->
+            <div class="strengths-grid">
+              <div class="strength-card">
+                <div class="strength-icon">✓</div>
+                <h3 class="strength-title">24/7 Coverage</h3>
+              </div>
+              <div class="strength-card">
+                <div class="strength-icon">✓</div>
+                <h3 class="strength-title">Licensed Guards</h3>
+              </div>
+              <div class="strength-card">
+                <div class="strength-icon">✓</div>
+                <h3 class="strength-title">Fast Response</h3>
+              </div>
+              <div class="strength-card">
+                <div class="strength-icon">✓</div>
+                <h3 class="strength-title">Visible Presence</h3>
+              </div>
+              <div class="strength-card">
+                <div class="strength-icon">✓</div>
+                <h3 class="strength-title">Detailed Reports</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section bg-charcoal">
+      <div class="section-container">
+        <div class="fade-in-section">
+          <h2 class="section-title text-center">Our Services</h2>
+          <p class="section-subtitle">
+            Comprehensive security solutions tailored to your needs
+          </p>
+
+          <div class="services-grid">
+            <div class="service-card">
+              <div class="service-icon">🛒</div>
+              <h3 class="service-title">Retail & Plaza Security</h3>
+              <p class="service-description">Comprehensive security solutions for shopping centers, retail stores, and commercial plazas. Protect your business and customers.</p>
+            </div>
+            <div class="service-card">
+              <div class="service-icon">🏗️</div>
+              <h3 class="service-title">Construction Site Security</h3>
+              <p class="service-description">24/7 monitoring and protection for construction sites. Prevent theft, vandalism, and unauthorized access to valuable equipment.</p>
+            </div>
+            <div class="service-card">
+              <div class="service-icon">🏠</div>
+              <h3 class="service-title">Residential & Condo Security</h3>
+              <p class="service-description">Peace of mind for residents and property managers. Professional security services for condominiums, apartment buildings, and residential complexes.</p>
+            </div>
+            <div class="service-card">
+              <div class="service-icon">🚗</div>
+              <h3 class="service-title">Mobile Patrols & Alarm Response</h3>
+              <p class="service-description">Rapid response mobile patrol services and alarm verification. Regular patrols ensure your property is continuously monitored.</p>
+            </div>
+            <div class="service-card">
+              <div class="service-icon">🎪</div>
+              <h3 class="service-title">Event Security</h3>
+              <p class="service-description">Professional event security for conferences, festivals, corporate events, and private functions. Keep your guests safe and secure.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Industries Section -->
+    <section id="industries" class="section bg-charcoal-light">
+      <div class="section-container">
+        <div class="fade-in-section">
+          <h2 class="section-title text-center">Industries We Serve</h2>
+          <p class="section-subtitle">
+            Trusted security solutions across various industries
+          </p>
+
+          <div class="industries-grid">
+            <div class="industry-card">
+              <div class="industry-icon">🏪</div>
+              <h3 class="industry-title">Shopping Plazas</h3>
+            </div>
+            <div class="industry-card">
+              <div class="industry-icon">🏭</div>
+              <h3 class="industry-title">Warehouses</h3>
+            </div>
+            <div class="industry-card">
+              <div class="industry-icon">🏢</div>
+              <h3 class="industry-title">Office Buildings</h3>
+            </div>
+            <div class="industry-card">
+              <div class="industry-icon">🏘️</div>
+              <h3 class="industry-title">HOAs</h3>
+            </div>
+            <div class="industry-card">
+              <div class="industry-icon">🚧</div>
+              <h3 class="industry-title">Construction Sites</h3>
+            </div>
+            <div class="industry-card">
+              <div class="industry-icon">🛍️</div>
+              <h3 class="industry-title">Retail Stores</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process" class="section bg-charcoal">
+      <div class="section-container">
+        <div class="fade-in-section">
+          <h2 class="section-title text-center">How It Works</h2>
+          <p class="section-subtitle">
+            A simple, streamlined process to get you the security you need
+          </p>
+
+          <div class="process-container">
+            <div class="process-timeline"></div>
+            <div class="process-steps">
+              <div class="process-step">
+                <div class="process-number">1</div>
+                <div class="process-card">
+                  <h3 class="process-title">Contact Us</h3>
+                  <p class="process-description">Reach out through our contact form or give us a call. We'll discuss your security needs and answer any questions.</p>
+                </div>
+              </div>
+              <div class="process-step">
+                <div class="process-number">2</div>
+                <div class="process-card">
+                  <h3 class="process-title">Site Assessment</h3>
+                  <p class="process-description">Our security experts will visit your location to assess risks, vulnerabilities, and develop a customized security plan.</p>
+                </div>
+              </div>
+              <div class="process-step">
+                <div class="process-number">3</div>
+                <div class="process-card">
+                  <h3 class="process-title">Custom Security Plan</h3>
+                  <p class="process-description">We'll create a tailored security strategy that addresses your specific requirements and fits your budget.</p>
+                </div>
+              </div>
+              <div class="process-step">
+                <div class="process-number">4</div>
+                <div class="process-card">
+                  <h3 class="process-title">Deployment & Reporting</h3>
+                  <p class="process-description">Our licensed guards are deployed, and you receive regular detailed reports on security activities and incidents.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="section bg-charcoal-light">
+      <div class="section-container">
+        <div class="fade-in-section">
+          <h2 class="section-title text-center">What Our Clients Say</h2>
+          <p class="section-subtitle">
+            Trusted by businesses and property managers across Ottawa
+          </p>
+
+          <div class="testimonials-grid">
+            <div class="testimonial-card">
+              <div class="testimonial-quote">"</div>
+              <p class="testimonial-content">
+                Iron Watch Security has been providing excellent service for our shopping plaza. Their guards are professional, punctual, and always alert. We feel much safer knowing they're protecting our property.
+              </p>
+              <div class="testimonial-author">
+                <p class="testimonial-name">John Smith</p>
+                <p class="testimonial-role">Property Manager, Downtown Plaza</p>
+              </div>
+            </div>
+            <div class="testimonial-card">
+              <div class="testimonial-quote">"</div>
+              <p class="testimonial-content">
+                Since hiring Iron Watch Security, we've had zero incidents at our construction site. Their mobile patrol services give us peace of mind, and the detailed reports keep us informed about everything happening on site.
+              </p>
+              <div class="testimonial-author">
+                <p class="testimonial-name">Sarah Johnson</p>
+                <p class="testimonial-role">Construction Manager, ABC Construction</p>
+              </div>
+            </div>
+            <div class="testimonial-card">
+              <div class="testimonial-quote">"</div>
+              <p class="testimonial-content">
+                The residential security services from Iron Watch Security are outstanding. Residents feel safer, and property values have improved. Their team is responsive and professional at all times.
+              </p>
+              <div class="testimonial-author">
+                <p class="testimonial-name">Michael Chen</p>
+                <p class="testimonial-role">HOA President, Riverside Condos</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section bg-charcoal">
+      <div class="section-container">
+        <div class="fade-in-section">
+          <h2 class="section-title text-center">Request a Quote</h2>
+          <p class="section-subtitle">
+            Get in touch with us to discuss your security needs
+          </p>
+
+          <div class="contact-form-wrapper">
+            <form id="contactForm" class="contact-form" onsubmit="handleFormSubmit(event)">
+              <!-- Name -->
+              <div class="form-group">
+                <label for="name" class="form-label">
+                  Name <span class="text-gold">*</span>
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  class="form-input"
+                  placeholder="Your full name"
+                />
+              </div>
+
+              <!-- Company (Optional) -->
+              <div class="form-group">
+                <label for="company" class="form-label">Company</label>
+                <input
+                  type="text"
+                  id="company"
+                  name="company"
+                  class="form-input"
+                  placeholder="Company name (optional)"
+                />
+              </div>
+
+              <!-- Email and Phone Row -->
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="email" class="form-label">
+                    Email <span class="text-gold">*</span>
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    class="form-input"
+                    placeholder="your@email.com"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="phone" class="form-label">
+                    Phone <span class="text-gold">*</span>
+                  </label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    required
+                    class="form-input"
+                    placeholder="(123) 456-7890"
+                  />
+                </div>
+              </div>
+
+              <!-- Site Address -->
+              <div class="form-group">
+                <label for="siteAddress" class="form-label">
+                  Site Address <span class="text-gold">*</span>
+                </label>
+                <textarea
+                  id="siteAddress"
+                  name="siteAddress"
+                  required
+                  rows="3"
+                  class="form-input"
+                  placeholder="Address of the location requiring security services"
+                ></textarea>
+              </div>
+
+              <!-- Service Type -->
+              <div class="form-group">
+                <label for="serviceType" class="form-label">
+                  Type of Service <span class="text-gold">*</span>
+                </label>
+                <select id="serviceType" name="serviceType" required class="form-input">
+                  <option value="">Select a service type</option>
+                  <option value="Retail & Plaza Security">Retail & Plaza Security</option>
+                  <option value="Construction Site Security">Construction Site Security</option>
+                  <option value="Residential & Condo Security">Residential & Condo Security</option>
+                  <option value="Mobile Patrols & Alarm Response">Mobile Patrols & Alarm Response</option>
+                  <option value="Event Security">Event Security</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+
+              <!-- Message -->
+              <div class="form-group">
+                <label for="message" class="form-label">Message / Requirements</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="5"
+                  class="form-input"
+                  placeholder="Tell us about your security needs, schedule requirements, or any specific concerns..."
+                ></textarea>
+              </div>
+
+              <!-- Submit Button -->
+              <button type="submit" class="btn-primary w-full" id="submitBtn">
+                Send Request
+              </button>
+
+              <!-- Success/Error Message -->
+              <div id="formMessage" class="form-message"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="section-container">
+      <div class="footer-grid">
+        <!-- Company Info -->
+        <div class="footer-col">
+          <h3 class="footer-title">IRON WATCH SECURITY</h3>
+          <p class="footer-text">Serving Ottawa & surrounding areas</p>
+          <p class="footer-text-small">
+            Professional security guard and mobile patrol services you can trust.
+          </p>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="footer-col">
+          <h4 class="footer-subtitle">Contact Us</h4>
+          <div class="footer-links">
+            <p>
+              <a href="mailto:ironwatchsec.services@gmail.com" class="footer-link">
+                ironwatchsec.services@gmail.com
+              </a>
+            </p>
+            <p>
+              <!-- TODO: Update phone number below -->
+              <a href="tel:+10000000000" class="footer-link">
+                (+1) 000-000-0000
+              </a>
+            </p>
+          </div>
+        </div>
+
+        <!-- Social Media Placeholders -->
+        <div class="footer-col">
+          <h4 class="footer-subtitle">Follow Us</h4>
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="Facebook">
+              <svg class="social-icon" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+              </svg>
+            </a>
+            <a href="#" class="social-link" aria-label="LinkedIn">
+              <svg class="social-icon" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+              </svg>
+            </a>
+            <a href="#" class="social-link" aria-label="Twitter">
+              <svg class="social-icon" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Copyright -->
+      <div class="footer-copyright">
+        <p>&copy; <span id="currentYear"></span> Iron Watch Security. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+

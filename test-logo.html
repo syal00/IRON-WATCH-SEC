@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Logo Test</title>
+  <style>
+    body { 
+      background: #1a1a1a; 
+      color: white; 
+      padding: 20px; 
+      font-family: Arial, sans-serif;
+    }
+    .test-box {
+      background: #2a2a2a;
+      padding: 20px;
+      margin: 20px 0;
+      border: 1px solid #d4af37;
+    }
+    img {
+      border: 2px solid #d4af37;
+      padding: 10px;
+      background: white;
+    }
+  </style>
+</head>
+<body>
+  <h1>Logo Loading Test</h1>
+  
+  <div class="test-box">
+    <h2>Test 1: Relative path (images/logo.svg)</h2>
+    <img src="images/logo.svg" alt="Test 1" style="max-width: 300px; height: auto;">
+    <p>Path: images/logo.svg</p>
+  </div>
+  
+  <div class="test-box">
+    <h2>Test 2: Relative path with dot (./images/logo.svg)</h2>
+    <img src="./images/logo.svg" alt="Test 2" style="max-width: 300px; height: auto;">
+    <p>Path: ./images/logo.svg</p>
+  </div>
+  
+  <div class="test-box">
+    <h2>Test 3: Check if file exists</h2>
+    <p id="file-check">Checking...</p>
+  </div>
+  
+  <script>
+    // Test if logo loads
+    const img1 = document.querySelector('img[src="images/logo.svg"]');
+    const img2 = document.querySelector('img[src="./images/logo.svg"]');
+    
+    img1.onload = function() {
+      console.log('✅ Test 1: images/logo.svg loaded successfully');
+      document.querySelector('h2').style.color = '#0f0';
+    };
+    img1.onerror = function() {
+      console.error('❌ Test 1: images/logo.svg failed to load');
+      document.querySelector('h2').style.color = '#f00';
+    };
+    
+    img2.onload = function() {
+      console.log('✅ Test 2: ./images/logo.svg loaded successfully');
+      document.querySelectorAll('h2')[1].style.color = '#0f0';
+    };
+    img2.onerror = function() {
+      console.error('❌ Test 2: ./images/logo.svg failed to load');
+      document.querySelectorAll('h2')[1].style.color = '#f00';
+    };
+    
+    // Check file path
+    fetch('images/logo.svg')
+      .then(response => {
+        if (response.ok) {
+          document.getElementById('file-check').innerHTML = '✅ File exists and is accessible at: images/logo.svg';
+          document.getElementById('file-check').style.color = '#0f0';
+        } else {
+          document.getElementById('file-check').innerHTML = '❌ File not accessible: ' + response.status;
+          document.getElementById('file-check').style.color = '#f00';
+        }
+      })
+      .catch(error => {
+        document.getElementById('file-check').innerHTML = '❌ Error: ' + error.message;
+        document.getElementById('file-check').style.color = '#f00';
+      });
+  </script>
+</body>
+</html>
+
+
