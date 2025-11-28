@@ -22,19 +22,18 @@ const Footer = () => {
             <div className="space-y-2 text-silver-dark">
               <p>
                 <a 
-                  href="mailto:ironwatchsec.services@gmail.com" 
+                  href="mailto:info@ironwatchsecurity.com" 
                   className="hover:text-gold transition-colors"
                 >
-                  ironwatchsec.services@gmail.com
+                  info@ironwatchsecurity.com
                 </a>
               </p>
               <p>
-                {/* TODO: Update phone number below */}
                 <a 
-                  href="tel:+10000000000" 
+                  href="tel:+12269273959" 
                   className="hover:text-gold transition-colors"
                 >
-                  (+1) 000-000-0000
+                  +1(226)927-3959
                 </a>
               </p>
             </div>

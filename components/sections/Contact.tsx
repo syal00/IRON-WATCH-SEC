@@ -44,21 +44,55 @@ const Contact = () => {
     setIsSubmitting(true)
 
     try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      })
+      // Check if EmailJS is available
+      if (typeof window !== 'undefined' && (window as any).emailjs) {
+        const emailjs = (window as any).emailjs
+        
+        // EmailJS configuration - update these with your actual values
+        const EMAILJS_CONFIG = {
+          publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || 'YOUR_PUBLIC_KEY',
+          serviceID: process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || 'YOUR_SERVICE_ID',
+          templateID: process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || 'YOUR_TEMPLATE_ID',
+          recipientEmail: 'info@ironwatchsecurity.com'
+        }
 
-      const data = await response.json()
+        // Check if EmailJS is configured
+        if (EMAILJS_CONFIG.publicKey === 'YOUR_PUBLIC_KEY' || 
+            EMAILJS_CONFIG.serviceID === 'YOUR_SERVICE_ID' || 
+            EMAILJS_CONFIG.templateID === 'YOUR_TEMPLATE_ID') {
+          throw new Error('EmailJS is not configured. Please set up EmailJS credentials.')
+        }
 
-      if (!response.ok) {
-        throw new Error(data.error || 'Something went wrong')
+        // Initialize EmailJS (safe to call multiple times)
+        if (emailjs.init) {
+          emailjs.init(EMAILJS_CONFIG.publicKey)
+        }
+
+        // Prepare template parameters
+        const templateParams = {
+          from_name: formData.name,
+          from_email: formData.email,
+          phone: formData.phone,
+          company: formData.company || 'Not provided',
+          site_address: formData.siteAddress,
+          service_type: formData.serviceType,
+          message: formData.message || 'No additional message provided',
+          to_email: EMAILJS_CONFIG.recipientEmail,
+          reply_to: formData.email
+        }
+
+        // Send email via EmailJS
+        await emailjs.send(
+          EMAILJS_CONFIG.serviceID,
+          EMAILJS_CONFIG.templateID,
+          templateParams
+        )
+
+        toast.success('Thank you! Your quote request has been sent successfully. We will contact you within 24 hours.')
+      } else {
+        // Fallback if EmailJS is not loaded
+        throw new Error('Email service is not available. Please contact us directly at info@ironwatchsecurity.com')
       }
-
-      toast.success('Thank you! Your message has been sent. We\'ll get back to you soon.')
       
       // Reset form
       setFormData({
@@ -72,7 +106,7 @@ const Contact = () => {
       })
     } catch (error) {
       console.error('Error submitting form:', error)
-      toast.error(error instanceof Error ? error.message : 'Failed to send message. Please try again.')
+      toast.error(error instanceof Error ? error.message : 'Failed to send message. Please try again or contact us directly at info@ironwatchsecurity.com')
     } finally {
       setIsSubmitting(false)
     }

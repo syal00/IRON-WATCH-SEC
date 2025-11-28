@@ -1,7 +1,6 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import Image from 'next/image'
 
 const Hero = () => {
   const scrollToContact = (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -41,13 +40,10 @@ const Hero = () => {
             
             {/* Logo image */}
             <div className="relative">
-              <Image
+              <img
                 src="/logo-ironwatch.png"
                 alt="Iron Watch Security logo"
-                width={320}
-                height={320}
                 className="relative h-40 w-40 md:h-64 md:w-64 object-contain drop-shadow-[0_0_30px_rgba(0,0,0,0.7)]"
-                priority
               />
             </div>
           </motion.div>
@@ -89,7 +85,7 @@ const Hero = () => {
               Request a Quote
             </motion.button>
             <motion.a
-              href="tel:+10000000000"
+              href="tel:+12269273959"
               className="btn-secondary"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}

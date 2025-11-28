@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import Image from 'next/image'
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -52,11 +51,9 @@ const Header = () => {
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
         >
-          <Image
+          <img
             src="/logo-ironwatch.png"
             alt="Iron Watch Security logo"
-            width={40}
-            height={40}
             className="h-10 w-10 object-contain drop-shadow"
           />
           <div className="leading-tight">

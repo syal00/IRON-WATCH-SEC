@@ -20,13 +20,13 @@ const Testimonials = () => {
     {
       name: 'John Smith',
       role: 'Property Manager',
-      company: 'Downtown Plaza',
+      company: 'Plaza in Cornwall',
       content: 'Iron Watch Security has been providing excellent service for our shopping plaza. Their guards are professional, punctual, and always alert. We feel much safer knowing they\'re protecting our property.',
     },
     {
       name: 'Sarah Johnson',
       role: 'Construction Manager',
-      company: 'ABC Construction',
+      company: 'Sandhu Construction and Landscapes',
       content: 'Since hiring Iron Watch Security, we\'ve had zero incidents at our construction site. Their mobile patrol services give us peace of mind, and the detailed reports keep us informed about everything happening on site.',
     },
     {
@@ -61,7 +61,7 @@ const Testimonials = () => {
                 whileHover={{ scale: 1.02, y: -5 }}
               >
                 {/* Quote icon */}
-                <div className="text-gold text-4xl mb-4">"</div>
+                <div className="text-gold text-4xl mb-4">&ldquo;</div>
                 
                 <p className="text-silver mb-6 leading-relaxed italic">
                   {testimonial.content}
