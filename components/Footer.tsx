@@ -1,52 +1,83 @@
 import React from 'react'
+import Link from 'next/link'
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear()
+
   return (
-    <footer className="bg-charcoal-light border-t border-silver/10">
+    <footer className="bg-charcoal border-t border-gold/10">
       <div className="section-container">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12 mb-12">
           {/* Company Info */}
           <div>
-            <h3 className="text-white font-bold text-xl mb-4">IRON WATCH SECURITY</h3>
+            <h3 className="text-white font-bold text-xl mb-4">IRON WATCH SECURITY INC.</h3>
             <p className="text-silver-dark mb-4">
               Serving Ottawa & surrounding areas
             </p>
-            <p className="text-silver text-sm">
-              Professional security guard and mobile patrol services you can trust.
+            <p className="text-silver-dark text-sm leading-relaxed">
+              Professional security solutions you can trust. Licensed, insured, and committed to protecting what matters most.
             </p>
+          </div>
+
+          {/* Quick Links */}
+          <div>
+            <h4 className="text-white font-semibold mb-4">Quick Links</h4>
+            <div className="space-y-2">
+              <Link href="/" className="block text-silver-dark hover:text-gold transition-colors">
+                Home
+              </Link>
+              <Link href="/services" className="block text-text-secondary hover:text-gold transition-colors">
+                Services
+              </Link>
+              <Link href="/about" className="block text-text-secondary hover:text-gold transition-colors">
+                About Us
+              </Link>
+              <Link href="/contact" className="block text-text-secondary hover:text-gold transition-colors">
+                Contact
+              </Link>
+            </div>
           </div>
 
           {/* Contact Info */}
           <div>
             <h4 className="text-white font-semibold mb-4">Contact Us</h4>
-            <div className="space-y-2 text-silver-dark">
+            <div className="space-y-3 text-silver-dark">
               <p>
                 <a 
                   href="mailto:info@ironwatchsecurity.com" 
-                  className="hover:text-gold transition-colors"
+                  className="hover:text-gold transition-colors flex items-center gap-2"
                 >
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
                   info@ironwatchsecurity.com
                 </a>
               </p>
               <p>
                 <a 
                   href="tel:+12269273959" 
-                  className="hover:text-gold transition-colors"
+                  className="hover:text-gold transition-colors flex items-center gap-2"
                 >
-                  +1(226)927-3959
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                  </svg>
+                  +1 (226) 927-3959
                 </a>
               </p>
+              <div className="flex items-center gap-2 pt-2">
+                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
+                <span className="text-sm text-silver-dark">24/7 Available</span>
+              </div>
             </div>
           </div>
 
-          {/* Social Media Placeholders */}
+          {/* Social Media */}
           <div>
             <h4 className="text-white font-semibold mb-4">Follow Us</h4>
             <div className="flex space-x-4">
-              {/* Social media icons - add links when available */}
               <a 
                 href="#" 
-                className="w-10 h-10 rounded-full border border-silver/30 flex items-center justify-center text-silver hover:text-gold hover:border-gold transition-all"
+                className="w-12 h-12 rounded-full border border-gold/30 flex items-center justify-center text-text-secondary hover:text-gold hover:border-gold transition-all"
                 aria-label="Facebook"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -55,7 +86,7 @@ const Footer = () => {
               </a>
               <a 
                 href="#" 
-                className="w-10 h-10 rounded-full border border-silver/30 flex items-center justify-center text-silver hover:text-gold hover:border-gold transition-all"
+                className="w-12 h-12 rounded-full border border-gold/30 flex items-center justify-center text-text-secondary hover:text-gold hover:border-gold transition-all"
                 aria-label="LinkedIn"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -64,7 +95,7 @@ const Footer = () => {
               </a>
               <a 
                 href="#" 
-                className="w-10 h-10 rounded-full border border-silver/30 flex items-center justify-center text-silver hover:text-gold hover:border-gold transition-all"
+                className="w-12 h-12 rounded-full border border-gold/30 flex items-center justify-center text-text-secondary hover:text-gold hover:border-gold transition-all"
                 aria-label="Twitter"
               >
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -76,8 +107,8 @@ const Footer = () => {
         </div>
 
         {/* Copyright */}
-        <div className="border-t border-silver/10 mt-12 pt-8 text-center text-silver-dark text-sm">
-          <p>&copy; {new Date().getFullYear()} Iron Watch Security. All rights reserved.</p>
+        <div className="border-t border-gold/10 pt-8 text-center text-silver-dark text-sm">
+          <p>&copy; {currentYear} Iron Watch Security Inc. All rights reserved.</p>
         </div>
       </div>
     </footer>
@@ -85,4 +116,3 @@ const Footer = () => {
 }
 
 export default Footer
-
